@@ -35,7 +35,7 @@ end
 
 function Signal:Fire(...)
     for _, listener in self.Listeners do
-        listener(...)
+        task.spawn(listener, ...)
     end
 end
 
